@@ -513,7 +513,7 @@ locales in order to define in which locales the translated strings should be ret
       </li>
     
       <li class="entry-summary">
-        <a href="#with_locale(locale:String%7CSymbol,&):Nil-instance-method" class="signature"><strong>#with_locale</strong>(locale : String | Symbol, &) : Nil</a>
+        <a href="#with_locale(locale:String%7CSymbol,&)-instance-method" class="signature"><strong>#with_locale</strong>(locale : String | Symbol, &)</a>
         
           <div class="summary"><p>Allows to activate a specific locale for a specific block.</p></div>
         
@@ -623,7 +623,7 @@ translations.</p>
           <p>Activates a locale for translations.</p>
 
 <p>This method allows to set the locale used to produce translated contents. Note that once activated, the current
-locale will remain active until it's explicly changed again. <code><a href="../I18n/Catalog.html#with_locale(locale:String%7CSymbol,&):Nil-instance-method">#with_locale</a></code> should be used instead of <code><a href="../I18n/Catalog.html#activate(locale:String%7CSymbol):String-instance-method">#activate</a></code>
+locale will remain active until it's explicly changed again. <code><a href="../I18n/Catalog.html#with_locale(locale:String%7CSymbol,&)-instance-method">#with_locale</a></code> should be used instead of <code><a href="../I18n/Catalog.html#activate(locale:String%7CSymbol):String-instance-method">#activate</a></code>
 for cases where it is important to ensure that the previous active locale is restored.</p>
 
 <p>An <code><a href="../I18n/Errors/InvalidLocale.html">I18n::Errors::InvalidLocale</a></code> exception will be raised by this method if the passed locale is not available in
@@ -992,12 +992,12 @@ catalog.translate!(<span class="n">:blank</span>, scope: [<span class="n">:error
       </div>
     </div>
   
-    <div class="entry-detail" id="with_locale(locale:String|Symbol,&):Nil-instance-method">
+    <div class="entry-detail" id="with_locale(locale:String|Symbol,&)-instance-method">
       <div class="signature">
         
-        def <strong>with_locale</strong>(locale : String | Symbol, &) : Nil
+        def <strong>with_locale</strong>(locale : String | Symbol, &)
 
-        <a class="method-permalink" href="#with_locale(locale:String%7CSymbol,&):Nil-instance-method">#</a>
+        <a class="method-permalink" href="#with_locale(locale:String%7CSymbol,&)-instance-method">#</a>
       </div>
       
         <div class="doc">
