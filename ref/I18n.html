@@ -3,21 +3,16 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="generator" content="Crystal Docs 0.36.1">
 <meta name="crystal_docs.project_version" content="0.1.5">
 <meta name="crystal_docs.project_name" content="i18n">
+
 
 
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/doc.js"></script>
 
-<svg class="hidden">
-  <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-  </symbol>
-</svg>
-
-  <meta id="repository-name" content="i18n">
+  <meta name="repository-name" content="i18n">
   <title>I18n - i18n 0.1.5</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
@@ -25,6 +20,11 @@
 </head>
 <body>
 
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  <div class="search-results" class="hidden">
+  <div class="search-results hidden">
     <ul class="search-list"></ul>
   </div>
 
@@ -322,7 +322,7 @@
 
 <p>Assuming that a <code>config/locales</code> relative folder exists, with the following <code>en.yml</code> file in it:</p>
 
-<pre><code>en:
+<pre><code class="language-crystal">en:
   simple:
     translation: <span class="s">&quot;This is a simple translation&quot;</span>
     interpolation: <span class="s">&quot;Hello, %{name}!&quot;</span>
@@ -332,7 +332,7 @@
 
 <p>The following I18n setup could be defined:</p>
 
-<pre><code><span class="k">require</span> <span class="s">&quot;i18n&quot;</span>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;i18n&quot;</span>
 
 <span class="t">I18n</span>.config.loaders <span class="o">&lt;&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>(<span class="s">&quot;config/locales&quot;</span>)
 <span class="t">I18n</span>.init</code></pre>
@@ -346,7 +346,7 @@
 <p>Translations can be resolved using the <code><a href="I18n.html#translate(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#translate</a></code> method (or the shorter version <code><a href="I18n.html#t(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#t</a></code>) and the <code><a href="I18n.html#translate!(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#translate!</a></code> method
 (or the shorter version <code><a href="I18n.html#t!(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#t!</a></code>):</p>
 
-<pre><code><span class="t">I18n</span>.t(<span class="s">&quot;simple.translation&quot;</span>)                     <span class="c"># outputs &quot;This is a simple translation&quot;</span>
+<pre><code class="language-crystal"><span class="t">I18n</span>.t(<span class="s">&quot;simple.translation&quot;</span>)                     <span class="c"># outputs &quot;This is a simple translation&quot;</span>
 <span class="t">I18n</span>.t(<span class="s">&quot;simple.interpolation&quot;</span>, name: <span class="s">&quot;John Doe&quot;</span>) <span class="c"># outputs &quot;Hello, John Doe!&quot;</span>
 <span class="t">I18n</span>.t(<span class="s">&quot;simple.pluralization&quot;</span>, count: <span class="n">42</span>)        <span class="c"># outputs &quot;42 items&quot;</span></code></pre>
 
@@ -358,7 +358,7 @@
 
 <p>It is possible to localize date time objects using the <code><a href="I18n.html#localize(object:Number,format:String%7CSymbol=:default):String-class-method">#localize</a></code> method (or the shorter version <code><a href="I18n.html#l(object:Number,format:String%7CSymbol=:default):String-class-method">#l</a></code>):</p>
 
-<pre><code><span class="t">I18n</span>.l(<span class="t">Time</span>.local)                 <span class="c"># =&gt; Sun, 13 Dec 2020 21:11:08 -0500</span>
+<pre><code class="language-crystal"><span class="t">I18n</span>.l(<span class="t">Time</span>.local)                 <span class="c"># =&gt; Sun, 13 Dec 2020 21:11:08 -0500</span>
 <span class="t">I18n</span>.l(<span class="t">Time</span>.local, <span class="n">:short</span>)         <span class="c"># =&gt; 13 Dec 21:11</span>
 <span class="t">I18n</span>.l(<span class="t">Time</span>.local.date)            <span class="c"># =&gt; 2020-12-13</span>
 <span class="t">I18n</span>.l(<span class="t">Time</span>.local.date, <span class="n">:long</span>)     <span class="c"># =&gt; December 13, 2020</span>
@@ -385,6 +385,186 @@
 </a>
     Defined in:
   </h2>
+  
+    
+      i18n.cr
+    
+    <br/>
+  
+    
+      i18n/catalog.cr
+    
+    <br/>
+  
+    
+      i18n/config.cr
+    
+    <br/>
+  
+    
+      i18n/errors.cr
+    
+    <br/>
+  
+    
+      i18n/loader/base.cr
+    
+    <br/>
+  
+    
+      i18n/loader/json.cr
+    
+    <br/>
+  
+    
+      i18n/loader/yaml.cr
+    
+    <br/>
+  
+    
+      i18n/locale/fallbacks.cr
+    
+    <br/>
+  
+    
+      i18n/locale/tag.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/arabic.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/breton.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/central_morocco_tamazight.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/colognian.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/east_slavic.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/irish.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/langi.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/latvian.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/lithuanian.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/macedonian.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/maltese.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/manx.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/one_other.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/one_two_other.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/one_up_to_two_other.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/one_with_zero_other.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/other.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/polish.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/romanian.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/scottish_gaelic.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/slovenian.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/upper_sorbian.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/welsh.cr
+    
+    <br/>
+  
+    
+      i18n/pluralization/rule/west_slavic.cr
+    
+    <br/>
+  
+    
+      i18n/translation_hash.cr
+    
+    <br/>
   
 
 
@@ -766,7 +946,7 @@ the main catalog of translations. Calling this will ensure that the translations
 <p>This method allows to localize a <code>Number</code> object (such as an integer or a float). By default, the <code>:default</code> format
 is used, but custom formats can be used as well:</p>
 
-<pre><code><span class="t">I18n</span>.localize(<span class="n">123_456.789</span>)          <span class="c"># =&gt; 123,456.789</span>
+<pre><code class="language-crystal"><span class="t">I18n</span>.localize(<span class="n">123_456.789</span>)          <span class="c"># =&gt; 123,456.789</span>
 <span class="t">I18n</span>.localize(<span class="n">123_456.789</span>, <span class="n">:custom</span>) <span class="c"># =&gt; 123,456.79</span></code></pre>
         </div>
       
@@ -792,7 +972,7 @@ is used, but custom formats can be used as well:</p>
 obtained through the use of <code>Time#date</code>). Both time or "date" objects can be localized using a predefined format
 such as <code>:default</code>, <code>:short</code> or <code>:long</code>, but custom formats can be used as well:</p>
 
-<pre><code><span class="t">I18n</span>.localize(<span class="t">Time</span>.local)                 <span class="c"># =&gt; Sun, 13 Dec 2020 21:11:08 -0500</span>
+<pre><code class="language-crystal"><span class="t">I18n</span>.localize(<span class="t">Time</span>.local)                 <span class="c"># =&gt; Sun, 13 Dec 2020 21:11:08 -0500</span>
 <span class="t">I18n</span>.localize(<span class="t">Time</span>.local, <span class="n">:short</span>)         <span class="c"># =&gt; 13 Dec 21:11</span>
 <span class="t">I18n</span>.localize(<span class="t">Time</span>.local.date)            <span class="c"># =&gt; 2020-12-13</span>
 <span class="t">I18n</span>.localize(<span class="t">Time</span>.local.date, <span class="n">:long</span>)     <span class="c"># =&gt; December 13, 2020</span>
@@ -858,7 +1038,7 @@ such as <code>:default</code>, <code>:short</code> or <code>:long</code>, but cu
 <p>This method performs a translation lookup for a given <code>key</code>. If no translation can be found for the given <code>key</code>, a
 default string stating that the translation is missing will be returned.</p>
 
-<pre><code><span class="t">I18n</span>.translate(<span class="s">&quot;simple.translation&quot;</span>)               <span class="c"># =&gt; &quot;Simple translation&quot;</span>
+<pre><code class="language-crystal"><span class="t">I18n</span>.translate(<span class="s">&quot;simple.translation&quot;</span>)               <span class="c"># =&gt; &quot;Simple translation&quot;</span>
 <span class="t">I18n</span>.translate(<span class="s">&quot;hello.user&quot;</span>, name: <span class="s">&quot;John&quot;</span>)         <span class="c"># =&gt; &quot;Hello John!&quot;</span>
 <span class="t">I18n</span>.translate(<span class="n">:blank</span>, scope: <span class="s">&quot;error.username&quot;</span>)    <span class="c"># =&gt; &quot;Username cannot be blank&quot;</span>
 <span class="t">I18n</span>.translate(<span class="n">:blank</span>, scope: [<span class="n">:error</span>, <span class="n">:username</span>]) <span class="c"># =&gt; &quot;Username cannot be blank&quot;</span></code></pre>
@@ -885,7 +1065,7 @@ default string stating that the translation is missing will be returned.</p>
 <p>This method performs a translation lookup for a given <code>key</code>. If no translation can be found for the given <code>key</code>,
 an <code><a href="I18n/Errors/MissingTranslation.html">I18n::Errors::MissingTranslation</a></code> exception will be raised.</p>
 
-<pre><code><span class="t">I18n</span>.translate!(<span class="s">&quot;simple.translation&quot;</span>)               <span class="c"># =&gt; &quot;Simple translation&quot;</span>
+<pre><code class="language-crystal"><span class="t">I18n</span>.translate!(<span class="s">&quot;simple.translation&quot;</span>)               <span class="c"># =&gt; &quot;Simple translation&quot;</span>
 <span class="t">I18n</span>.translate!(<span class="s">&quot;hello.user&quot;</span>, name: <span class="s">&quot;John&quot;</span>)         <span class="c"># =&gt; &quot;Hello John!&quot;</span>
 <span class="t">I18n</span>.translate!(<span class="n">:blank</span>, scope: <span class="s">&quot;error.username&quot;</span>)    <span class="c"># =&gt; &quot;Username cannot be blank&quot;</span>
 <span class="t">I18n</span>.translate!(<span class="n">:blank</span>, scope: [<span class="n">:error</span>, <span class="n">:username</span>]) <span class="c"># =&gt; &quot;Username cannot be blank&quot;</span></code></pre>
@@ -913,7 +1093,7 @@ an <code><a href="I18n/Errors/MissingTranslation.html">I18n::Errors::MissingTran
 leak outside of the block. When the block execution completes, the locale that was previously activated prior to the
 block execution will be automatically activated again:</p>
 
-<pre><code><span class="t">I18n</span>.config.default_locale <span class="c"># outputs &quot;en&quot;</span>
+<pre><code class="language-crystal"><span class="t">I18n</span>.config.default_locale <span class="c"># outputs &quot;en&quot;</span>
 <span class="t">I18n</span>.with_locale(<span class="n">:es</span>) <span class="k">do</span>
   <span class="t">I18n</span>.translate!(<span class="s">&quot;test.translation&quot;</span>) <span class="c"># outputs a spanish translation</span>
 <span class="k">end</span>
