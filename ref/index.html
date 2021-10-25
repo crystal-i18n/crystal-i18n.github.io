@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="0.2.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="crystal_docs.project_version" content="main-dev">
 <meta name="crystal_docs.project_name" content="i18n">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="i18n">
-  <title>i18n 0.2.0</title>
+  <title>i18n main-dev</title>
   <script type="text/javascript">
   CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.2.0
+        main-dev
       </span>
     </div>
   </div>
@@ -293,109 +293,90 @@
 
 
 <div class="main-content">
-<h1><a id="crystal-i18n" class="anchor" href="#crystal-i18n">
-  <svg class="octicon-link" aria-hidden="true">
+<h1><a id="crystal-i18n" class="anchor" href="#crystal-i18n">  <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Crystal I18n</h1>
-
-<p><img src="https://raw.githubusercontent.com/crystal-i18n/i18n/main/docs/src/.vuepress/public/assets/img/hero.svg" alt="logo"/></p>
-
-<p><a href="https://github.com/crystal-i18n/i18n/tags"><img src="https://img.shields.io/github/v/tag/crystal-i18n/i18n" alt="Version"/></a>
-<a href="https://github.com/crystal-i18n/i18n/blob/main/LICENSE"><img src="https://img.shields.io/github/license/crystal-i18n/i18n" alt="License"/></a>
-<a href="https://github.com/crystal-i18n/i18n/actions"><img src="https://github.com/crystal-i18n/i18n/workflows/CI/badge.svg" alt="CI"/></a></p>
-
-<hr/><p><strong>Crystal I18n</strong> is an internationalization library for the Crystal programming language. It provides a unified interface 
+<p><img src="https://raw.githubusercontent.com/crystal-i18n/i18n/main/docs/src/.vuepress/public/assets/img/hero.svg" alt="logo" /></p>
+<p><a href="https://github.com/crystal-i18n/i18n/tags"><img src="https://img.shields.io/github/v/tag/crystal-i18n/i18n" alt="Version" /></a>
+<a href="https://github.com/crystal-i18n/i18n/blob/main/LICENSE"><img src="https://img.shields.io/github/license/crystal-i18n/i18n" alt="License" /></a>
+<a href="https://github.com/crystal-i18n/i18n/actions"><img src="https://github.com/crystal-i18n/i18n/workflows/CI/badge.svg" alt="CI" /></a></p>
+<hr />
+<p><strong>Crystal I18n</strong> is an internationalization library for the Crystal programming language. It provides a unified interface
 allowing to leverage translations and localized contents in a Crystal project.</p>
-
 <p>Features:</p>
-
-<ul><li>Translation lookups</li><li>Localization</li><li>Interpolation</li><li>Pluralization rules</li><li>Locale fallbacks</li><li>Flexible configuration</li></ul>
-
+<ul>
+<li>Translation lookups</li>
+<li>Localization</li>
+<li>Interpolation</li>
+<li>Pluralization rules</li>
+<li>Locale fallbacks</li>
+<li>Flexible configuration</li>
+</ul>
 <h2><a id="documentation" class="anchor" href="#documentation">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Documentation</h2>
-
 <p>Online browsable documentation is available at https://crystal-i18n.github.io/.</p>
-
 <h2><a id="installation" class="anchor" href="#installation">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Installation</h2>
-
 <p>Simply add the following entry to your project's <code>shard.yml</code>:</p>
-
 <pre><code class="language-yaml">dependencies:
   i18n:
     github: crystal-i18n/i18n</code></pre>
-
 <p>And run <code>shards install</code> afterwards.</p>
-
 <h2><a id="usage" class="anchor" href="#usage">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Usage</h2>
-
 <p>Assuming that a <code>config/locales</code> relative folder exists in your project, with the following <code>en.yml</code> file in it:</p>
-
 <pre><code class="language-yaml">en:
   simple:
-    translation: "This is a simple translation"
-    interpolation: "Hello, %{name}!"
+    translation: &quot;This is a simple translation&quot;
+    interpolation: &quot;Hello, %{name}!&quot;
     pluralization:
-      one: "One item"
-      other: "%{count} items"</code></pre>
-
+      one: &quot;One item&quot;
+      other: &quot;%{count} items&quot;</code></pre>
 <p>The following setup could be performed in order to initialize <code><a href="I18n.html">I18n</a></code> properly:</p>
-
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;i18n&quot;</span>
 
 <span class="t">I18n</span>.config.loaders <span class="o">&lt;&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>(<span class="s">&quot;config/locales&quot;</span>)
 <span class="t">I18n</span>.config.default_locale <span class="o">=</span> <span class="n">:en</span>
 <span class="t">I18n</span>.init</code></pre>
-
-<p>Here a translation loader is configured to load the previous translation file while also configuring the default locale 
+<p>Here a translation loader is configured to load the previous translation file while also configuring the default locale
 (<code>en</code>) and initializing the <code><a href="I18n.html">I18n</a></code> module.</p>
-
 <p>Translations lookups can now be performed using the <code>#translate</code> method (or the shorter version <code>#t</code>) as follows:</p>
-
 <pre><code class="language-crystal"><span class="t">I18n</span>.t(<span class="s">&quot;simple.translation&quot;</span>)                     <span class="c"># outputs &quot;This is a simple translation&quot;</span>
 <span class="t">I18n</span>.t(<span class="s">&quot;simple.interpolation&quot;</span>, name: <span class="s">&quot;John Doe&quot;</span>) <span class="c"># outputs &quot;Hello, John Doe!&quot;</span>
 <span class="t">I18n</span>.t(<span class="s">&quot;simple.pluralization&quot;</span>, count: <span class="n">42</span>)        <span class="c"># outputs &quot;42 items&quot;</span></code></pre>
-
-<p>Please head over to the <a href="https://crystal-i18n.github.io/">documentation</a> for a more complete overview of the <code><a href="I18n.html">I18n</a></code> 
+<p>Please head over to the <a href="https://crystal-i18n.github.io/">documentation</a> for a more complete overview of the <code><a href="I18n.html">I18n</a></code>
 module capabilities (including the configuration options, localization features, etc).</p>
-
 <h2><a id="authors" class="anchor" href="#authors">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Authors</h2>
-
-<p>Morgan Aubert (<a href="https://github.com/ellmetha">@ellmetha</a>) and 
+<p>Morgan Aubert (<a href="https://github.com/ellmetha">@ellmetha</a>) and
 <a href="https://github.com/crystal-i18n/i18n/contributors">contributors</a>.</p>
-
 <h2><a id="credits" class="anchor" href="#credits">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Credits</h2>
-
-<p>Crystal I18n initially draws its inspiration from <a href="https://github.com/ruby-i18n/i18n">Ruby I18n</a> and 
+<p>Crystal I18n initially draws its inspiration from <a href="https://github.com/ruby-i18n/i18n">Ruby I18n</a> and
 <a href="https://github.com/svenfuchs/rails-i18n">rails-i18n</a>. Originally, pluralization and localization rules all come from
 <a href="https://github.com/svenfuchs/rails-i18n">rails-i18n</a> as well.</p>
-
 <h2><a id="license" class="anchor" href="#license">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>License</h2>
-
-<p>MIT. See <code></code>LICENSE<code></code> for more details.</p>
+<p>MIT. See <code>LICENSE</code> for more details.</p>
 </div>
 </body>
 </html>

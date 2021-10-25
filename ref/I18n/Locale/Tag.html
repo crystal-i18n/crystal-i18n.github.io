@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="0.2.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="crystal_docs.project_version" content="main-dev">
 <meta name="crystal_docs.project_name" content="i18n">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="i18n">
-  <title>I18n::Locale::Tag - i18n 0.2.0</title>
+  <title>I18n::Locale::Tag - i18n main-dev</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.2.0
+        main-dev
       </span>
     </div>
   </div>
@@ -315,7 +315,6 @@
   </h2>
 
   <p>A locale tag.</p>
-
 <p>This class allows to manipulate locale tags and locale tag parents.</p>
 
 
@@ -361,7 +360,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(tag:String)-class-method" class="signature"><strong>.new</strong>(tag : String)</a>
+        <a href="#new%28tag%3AString%29-class-method" class="signature"><strong>.new</strong>(tag : String)</a>
         
       </li>
     
@@ -382,28 +381,28 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#==(other:self)-instance-method" class="signature"><strong>#==</strong>(other : <span class="k">self</span>)</a>
+        <a href="#%3D%3D%28other%3Aself%29-instance-method" class="signature"><strong>#==</strong>(other : <span class="k">self</span>)</a>
         
           <div class="summary"><p>Returns <code>true</code> if this reference is the same as <em>other</em>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#parent:self?-instance-method" class="signature"><strong>#parent</strong> : <span class="k">self</span>?</a>
+        <a href="#parent%3Aself%3F-instance-method" class="signature"><strong>#parent</strong> : <span class="k">self</span>?</a>
         
           <div class="summary"><p>Returns the direct parent tag or <code>nil</code> if none is available.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#parents:Array(self)-instance-method" class="signature"><strong>#parents</strong> : Array(<span class="k">self</span>)</a>
+        <a href="#parents%3AArray%28self%29-instance-method" class="signature"><strong>#parents</strong> : Array(<span class="k">self</span>)</a>
         
           <div class="summary"><p>Returns all the available parent tags for the considered locale tags.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#to_s:String-instance-method" class="signature"><strong>#to_s</strong> : String</a>
+        <a href="#to_s%3AString-instance-method" class="signature"><strong>#to_s</strong> : String</a>
         
           <div class="summary"><p>Returns a string representation of this object.</p></div>
         
@@ -454,7 +453,7 @@
         
         def self.<strong>new</strong>(tag : String)
 
-        <a class="method-permalink" href="#new(tag:String)-class-method">#</a>
+        <a class="method-permalink" href="#new%28tag%3AString%29-class-method">#</a>
       </div>
       
       <br/>
@@ -482,7 +481,7 @@
         
         def <strong>==</strong>(other : <span class="k">self</span>)
 
-        <a class="method-permalink" href="#==(other:self)-instance-method">#</a>
+        <a class="method-permalink" href="#%3D%3D%28other%3Aself%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -505,7 +504,7 @@
         
         def <strong>parent</strong> : <span class="k">self</span>?
 
-        <a class="method-permalink" href="#parent:self?-instance-method">#</a>
+        <a class="method-permalink" href="#parent%3Aself%3F-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -524,13 +523,12 @@
         
         def <strong>parents</strong> : Array(<span class="k">self</span>)
 
-        <a class="method-permalink" href="#parents:Array(self)-instance-method">#</a>
+        <a class="method-permalink" href="#parents%3AArray%28self%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns all the available parent tags for the considered locale tags.</p>
-
 <p>An empty array is returned if the considered locale tags does not have any parents.</p>
         </div>
       
@@ -545,7 +543,7 @@
         
         def <strong>to_s</strong> : String
 
-        <a class="method-permalink" href="#to_s:String-instance-method">#</a>
+        <a class="method-permalink" href="#to_s%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -555,7 +553,6 @@
             </div>
           
           <p>Returns a string representation of this object.</p>
-
 <p>Descendants must usually <strong>not</strong> override this method. Instead,
 they must override <code>to_s(io)</code>, which must append to the given
 IO object.</p>

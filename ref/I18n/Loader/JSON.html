@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="0.2.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="crystal_docs.project_version" content="main-dev">
 <meta name="crystal_docs.project_name" content="i18n">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="i18n">
-  <title>I18n::Loader::JSON - i18n 0.2.0</title>
+  <title>I18n::Loader::JSON - i18n main-dev</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.2.0
+        main-dev
       </span>
     </div>
   </div>
@@ -315,15 +315,11 @@
   </h2>
 
   <p>The JSON translations loader.</p>
-
 <p>This loader implementation allows to load translations from JSON files. It must be initialized from a given path
 and it will recursively try to load all the JSON files that are available under the targetted directory:</p>
-
 <pre><code class="language-crystal"><span class="t">I18n</span>.config.loaders <span class="o">&lt;&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">JSON</span>.<span class="k">new</span>(<span class="s">&quot;config/locales&quot;</span>)</code></pre>
-
 <p>This loader also allows to embed the raw translations that are available under the targetted directory inside the
-compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.html#embed(path)-macro">#embed</a></code> macro:</p>
-
+compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.html#embed%28path%29-macro">#embed</a></code> macro:</p>
 <pre><code class="language-crystal"><span class="t">I18n</span>.config.loaders <span class="o">&lt;&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">JSON</span>.embed(<span class="s">&quot;config/locales&quot;</span>)</code></pre>
 
 
@@ -369,12 +365,12 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(path:String)-class-method" class="signature"><strong>.new</strong>(path : String)</a>
+        <a href="#new%28path%3AString%29-class-method" class="signature"><strong>.new</strong>(path : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new(preloaded_translations:TranslationsHash)-class-method" class="signature"><strong>.new</strong>(preloaded_translations : TranslationsHash)</a>
+        <a href="#new%28preloaded_translations%3ATranslationsHash%29-class-method" class="signature"><strong>.new</strong>(preloaded_translations : TranslationsHash)</a>
         
       </li>
     
@@ -393,7 +389,7 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#normalize_raw_translations(raw_translations:Array(String))-class-method" class="signature"><strong>.normalize_raw_translations</strong>(raw_translations : Array(String))</a>
+        <a href="#normalize_raw_translations%28raw_translations%3AArray%28String%29%29-class-method" class="signature"><strong>.normalize_raw_translations</strong>(raw_translations : Array(String))</a>
         
           <div class="summary"><p>Converts an array of JSON strings to a valid translations hash.</p></div>
         
@@ -414,19 +410,19 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#load:TranslationsHash-instance-method" class="signature"><strong>#load</strong> : TranslationsHash</a>
+        <a href="#load%3ATranslationsHash-instance-method" class="signature"><strong>#load</strong> : TranslationsHash</a>
         
           <div class="summary"><p>Loads the translations targetted by the current loader.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#path:String?-instance-method" class="signature"><strong>#path</strong> : String?</a>
+        <a href="#path%3AString%3F-instance-method" class="signature"><strong>#path</strong> : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#preloaded_translations:Hash(String,I18n::TranslationsHashValues)?-instance-method" class="signature"><strong>#preloaded_translations</strong> : Hash(String, I18n::TranslationsHashValues)?</a>
+        <a href="#preloaded_translations%3AHash%28String%2CI18n%3A%3ATranslationsHashValues%29%3F-instance-method" class="signature"><strong>#preloaded_translations</strong> : Hash(String, I18n::TranslationsHashValues)?</a>
         
       </li>
     
@@ -445,7 +441,7 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#embed(path)-macro" class="signature"><strong>embed</strong>(path)</a>
+        <a href="#embed%28path%29-macro" class="signature"><strong>embed</strong>(path)</a>
         
       </li>
     
@@ -460,7 +456,7 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
   <h3>Instance methods inherited from class <code><a href="../../I18n/Loader/Base.html">I18n::Loader::Base</a></code></h3>
   
   
-    <a href="../../I18n/Loader/Base.html#load:TranslationsHash-instance-method" class="tooltip">
+    <a href="../../I18n/Loader/Base.html#load%3ATranslationsHash-instance-method" class="tooltip">
       <span>load : TranslationsHash</span>
     load</a>
     
@@ -511,7 +507,7 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
         
         def self.<strong>new</strong>(path : String)
 
-        <a class="method-permalink" href="#new(path:String)-class-method">#</a>
+        <a class="method-permalink" href="#new%28path%3AString%29-class-method">#</a>
       </div>
       
       <br/>
@@ -525,7 +521,7 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
         
         def self.<strong>new</strong>(preloaded_translations : <a href="../../I18n/TranslationsHash.html">TranslationsHash</a>)
 
-        <a class="method-permalink" href="#new(preloaded_translations:TranslationsHash)-class-method">#</a>
+        <a class="method-permalink" href="#new%28preloaded_translations%3ATranslationsHash%29-class-method">#</a>
       </div>
       
       <br/>
@@ -551,7 +547,7 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
         
         def self.<strong>normalize_raw_translations</strong>(raw_translations : Array(String))
 
-        <a class="method-permalink" href="#normalize_raw_translations(raw_translations:Array(String))-class-method">#</a>
+        <a class="method-permalink" href="#normalize_raw_translations%28raw_translations%3AArray%28String%29%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -582,7 +578,7 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
         
         def <strong>load</strong> : <a href="../../I18n/TranslationsHash.html">TranslationsHash</a>
 
-        <a class="method-permalink" href="#load:TranslationsHash-instance-method">#</a>
+        <a class="method-permalink" href="#load%3ATranslationsHash-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -605,7 +601,7 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
         
         def <strong>path</strong> : String?
 
-        <a class="method-permalink" href="#path:String?-instance-method">#</a>
+        <a class="method-permalink" href="#path%3AString%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -619,7 +615,7 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
         
         def <strong>preloaded_translations</strong> : Hash(String, <a href="../../I18n/TranslationsHashValues.html">I18n::TranslationsHashValues</a>)?
 
-        <a class="method-permalink" href="#preloaded_translations:Hash(String,I18n::TranslationsHashValues)?-instance-method">#</a>
+        <a class="method-permalink" href="#preloaded_translations%3AHash%28String%2CI18n%3A%3ATranslationsHashValues%29%3F-instance-method">#</a>
       </div>
       
       <br/>
@@ -645,7 +641,7 @@ compiled binary through the use of the <code><a href="../../I18n/Loader/JSON.htm
         
         macro <strong>embed</strong>(path)
 
-        <a class="method-permalink" href="#embed(path)-macro">#</a>
+        <a class="method-permalink" href="#embed%28path%29-macro">#</a>
       </div>
       
       <br/>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="0.2.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="crystal_docs.project_version" content="main-dev">
 <meta name="crystal_docs.project_name" content="i18n">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="i18n">
-  <title>I18n - i18n 0.2.0</title>
+  <title>I18n - i18n main-dev</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.2.0
+        main-dev
       </span>
     </div>
   </div>
@@ -313,15 +313,12 @@
   </h2>
 
   <p>The I18n module provides a simple interface for internationalization and localization.</p>
-
 <h3><a id="basic-setup" class="anchor" href="#basic-setup">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Basic setup</h3>
-
 <p>Assuming that a <code>config/locales</code> relative folder exists, with the following <code>en.yml</code> file in it:</p>
-
 <pre><code class="language-crystal">en:
   simple:
     translation: <span class="s">&quot;This is a simple translation&quot;</span>
@@ -329,35 +326,27 @@
     pluralization:
       one: <span class="s">&quot;One item&quot;</span>
       other: <span class="s">&quot;%{count} items&quot;</span></code></pre>
-
 <p>The following I18n setup could be defined:</p>
-
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;i18n&quot;</span>
 
 <span class="t">I18n</span>.config.loaders <span class="o">&lt;&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>(<span class="s">&quot;config/locales&quot;</span>)
 <span class="t">I18n</span>.init</code></pre>
-
 <h3><a id="translations-lookups" class="anchor" href="#translations-lookups">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Translations lookups</h3>
-
-<p>Translations can be resolved using the <code><a href="I18n.html#translate(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#translate</a></code> method (or the shorter version <code><a href="I18n.html#t(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#t</a></code>) and the <code><a href="I18n.html#translate!(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#translate!</a></code> method
-(or the shorter version <code><a href="I18n.html#t!(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#t!</a></code>):</p>
-
+<p>Translations can be resolved using the <code><a href="I18n.html#translate%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#translate</a></code> method (or the shorter version <code><a href="I18n.html#t%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#t</a></code>) and the <code><a href="I18n.html#translate%21%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#translate!</a></code> method
+(or the shorter version <code><a href="I18n.html#t%21%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#t!</a></code>):</p>
 <pre><code class="language-crystal"><span class="t">I18n</span>.t(<span class="s">&quot;simple.translation&quot;</span>)                     <span class="c"># outputs &quot;This is a simple translation&quot;</span>
 <span class="t">I18n</span>.t(<span class="s">&quot;simple.interpolation&quot;</span>, name: <span class="s">&quot;John Doe&quot;</span>) <span class="c"># outputs &quot;Hello, John Doe!&quot;</span>
 <span class="t">I18n</span>.t(<span class="s">&quot;simple.pluralization&quot;</span>, count: <span class="n">42</span>)        <span class="c"># outputs &quot;42 items&quot;</span></code></pre>
-
 <h3><a id="localization" class="anchor" href="#localization">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>Localization</h3>
-
-<p>It is possible to localize date time objects using the <code><a href="I18n.html#localize(object:Number,format:String%7CSymbol=:default):String-class-method">#localize</a></code> method (or the shorter version <code><a href="I18n.html#l(object:Number,format:String%7CSymbol=:default):String-class-method">#l</a></code>):</p>
-
+<p>It is possible to localize date time objects using the <code><a href="I18n.html#localize%28object%3ANumber%2Cformat%3AString%7CSymbol%3D%3Adefault%29%3AString-class-method">#localize</a></code> method (or the shorter version <code><a href="I18n.html#l%28object%3ANumber%2Cformat%3AString%7CSymbol%3D%3Adefault%29%3AString-class-method">#l</a></code>):</p>
 <pre><code class="language-crystal"><span class="t">I18n</span>.l(<span class="t">Time</span>.local)                 <span class="c"># =&gt; Sun, 13 Dec 2020 21:11:08 -0500</span>
 <span class="t">I18n</span>.l(<span class="t">Time</span>.local, <span class="n">:short</span>)         <span class="c"># =&gt; 13 Dec 21:11</span>
 <span class="t">I18n</span>.l(<span class="t">Time</span>.local.date)            <span class="c"># =&gt; 2020-12-13</span>
@@ -603,112 +592,112 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#activate(locale:String%7CSymbol):String-class-method" class="signature"><strong>.activate</strong>(locale : String | Symbol) : String</a>
+        <a href="#activate%28locale%3AString%7CSymbol%29%3AString-class-method" class="signature"><strong>.activate</strong>(locale : String | Symbol) : String</a>
         
           <div class="summary"><p>Activates a locale for translations.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#available_locales:Array(String)-class-method" class="signature"><strong>.available_locales</strong> : Array(String)</a>
+        <a href="#available_locales%3AArray%28String%29-class-method" class="signature"><strong>.available_locales</strong> : Array(String)</a>
         
           <div class="summary"><p>Returns the available locales.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#config:Config-class-method" class="signature"><strong>.config</strong> : Config</a>
+        <a href="#config%3AConfig-class-method" class="signature"><strong>.config</strong> : Config</a>
         
           <div class="summary"><p>Returns the main configuration object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#config=(config:Config):Config-class-method" class="signature"><strong>.config=</strong>(config : Config) : Config</a>
+        <a href="#config%3D%28config%3AConfig%29%3AConfig-class-method" class="signature"><strong>.config=</strong>(config : Config) : Config</a>
         
           <div class="summary"><p>Allows to replace the main configuration object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#init:Nil-class-method" class="signature"><strong>.init</strong> : Nil</a>
+        <a href="#init%3ANil-class-method" class="signature"><strong>.init</strong> : Nil</a>
         
           <div class="summary"><p>Initializes the <code><a href="I18n.html">I18n</a></code> module.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#l(object:Number,format:String%7CSymbol=:default):String-class-method" class="signature"><strong>.l</strong>(object : Number, format : String | Symbol = <span class="n">:default</span>) : String</a>
+        <a href="#l%28object%3ANumber%2Cformat%3AString%7CSymbol%3D%3Adefault%29%3AString-class-method" class="signature"><strong>.l</strong>(object : Number, format : String | Symbol = <span class="n">:default</span>) : String</a>
         
-          <div class="summary"><p>Alias for <code><a href="I18n.html#localize(object:Number,format:String%7CSymbol=:default):String-class-method">#localize</a></code>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#l(object:Time%7CTuple(Int32,Int32,Int32),format:String%7CSymbol=:default,**kwargs):String-class-method" class="signature"><strong>.l</strong>(object : Time | Tuple(Int32, Int32, Int32), format : String | Symbol = <span class="n">:default</span>, **kwargs) : String</a>
-        
-          <div class="summary"><p>Alias for <code><a href="I18n.html#localize(object:Number,format:String%7CSymbol=:default):String-class-method">#localize</a></code>.</p></div>
+          <div class="summary"><p>Alias for <code><a href="I18n.html#localize%28object%3ANumber%2Cformat%3AString%7CSymbol%3D%3Adefault%29%3AString-class-method">#localize</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#locale:String-class-method" class="signature"><strong>.locale</strong> : String</a>
+        <a href="#l%28object%3ATime%7CTuple%28Int32%2CInt32%2CInt32%29%2Cformat%3AString%7CSymbol%3D%3Adefault%2C%2A%2Akwargs%29%3AString-class-method" class="signature"><strong>.l</strong>(object : Time | Tuple(Int32, Int32, Int32), format : String | Symbol = <span class="n">:default</span>, **kwargs) : String</a>
+        
+          <div class="summary"><p>Alias for <code><a href="I18n.html#localize%28object%3ANumber%2Cformat%3AString%7CSymbol%3D%3Adefault%29%3AString-class-method">#localize</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#locale%3AString-class-method" class="signature"><strong>.locale</strong> : String</a>
         
           <div class="summary"><p>Returns the currently active locale.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#locale=(locale:String%7CSymbol):String-class-method" class="signature"><strong>.locale=</strong>(locale : String | Symbol) : String</a>
+        <a href="#locale%3D%28locale%3AString%7CSymbol%29%3AString-class-method" class="signature"><strong>.locale=</strong>(locale : String | Symbol) : String</a>
         
-          <div class="summary"><p>Alias for <code><a href="I18n.html#activate(locale:String%7CSymbol):String-class-method">#activate</a></code>.</p></div>
+          <div class="summary"><p>Alias for <code><a href="I18n.html#activate%28locale%3AString%7CSymbol%29%3AString-class-method">#activate</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#localize(object:Number,format:String%7CSymbol=:default):String-class-method" class="signature"><strong>.localize</strong>(object : Number, format : String | Symbol = <span class="n">:default</span>) : String</a>
+        <a href="#localize%28object%3ANumber%2Cformat%3AString%7CSymbol%3D%3Adefault%29%3AString-class-method" class="signature"><strong>.localize</strong>(object : Number, format : String | Symbol = <span class="n">:default</span>) : String</a>
         
           <div class="summary"><p>Localizes a number.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#localize(object:Time%7CTuple(Int32,Int32,Int32),format:String%7CSymbol=:default,**kwargs):String-class-method" class="signature"><strong>.localize</strong>(object : Time | Tuple(Int32, Int32, Int32), format : String | Symbol = <span class="n">:default</span>, **kwargs) : String</a>
+        <a href="#localize%28object%3ATime%7CTuple%28Int32%2CInt32%2CInt32%29%2Cformat%3AString%7CSymbol%3D%3Adefault%2C%2A%2Akwargs%29%3AString-class-method" class="signature"><strong>.localize</strong>(object : Time | Tuple(Int32, Int32, Int32), format : String | Symbol = <span class="n">:default</span>, **kwargs) : String</a>
         
           <div class="summary"><p>Localizes a datetime or a date.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#t(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method" class="signature"><strong>.t</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String</a>
+        <a href="#t%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method" class="signature"><strong>.t</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String</a>
         
-          <div class="summary"><p>Alias for <code><a href="I18n.html#translate(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#translate</a></code>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#t!(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method" class="signature"><strong>.t!</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String</a>
-        
-          <div class="summary"><p>Alias for <code><a href="I18n.html#translate!(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#translate!</a></code>.</p></div>
+          <div class="summary"><p>Alias for <code><a href="I18n.html#translate%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#translate</a></code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#translate(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method" class="signature"><strong>.translate</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String</a>
+        <a href="#t%21%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method" class="signature"><strong>.t!</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String</a>
+        
+          <div class="summary"><p>Alias for <code><a href="I18n.html#translate%21%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#translate!</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#translate%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method" class="signature"><strong>.translate</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String</a>
         
           <div class="summary"><p>Performs a translation lookup.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#translate!(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method" class="signature"><strong>.translate!</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String</a>
+        <a href="#translate%21%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method" class="signature"><strong>.translate!</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String</a>
         
           <div class="summary"><p>Performs a translation lookup.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#with_locale(locale:String%7CSymbol,&)-class-method" class="signature"><strong>.with_locale</strong>(locale : String | Symbol, &)</a>
+        <a href="#with_locale%28locale%3AString%7CSymbol%2C%26%29-class-method" class="signature"><strong>.with_locale</strong>(locale : String | Symbol, &)</a>
         
           <div class="summary"><p>Allows to activate a specific locale for a specific block.</p></div>
         
@@ -743,17 +732,15 @@
         
         def self.<strong>activate</strong>(locale : String | Symbol) : String
 
-        <a class="method-permalink" href="#activate(locale:String%7CSymbol):String-class-method">#</a>
+        <a class="method-permalink" href="#activate%28locale%3AString%7CSymbol%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Activates a locale for translations.</p>
-
 <p>This method allows to set the locale used to produce translated contents. Note that once activated, the current
-locale will remain active until it's explicly changed again. <code><a href="I18n.html#with_locale(locale:String%7CSymbol,&)-class-method">#with_locale</a></code> should be used instead of <code><a href="I18n.html#activate(locale:String%7CSymbol):String-class-method">#activate</a></code>
+locale will remain active until it's explicly changed again. <code><a href="I18n.html#with_locale%28locale%3AString%7CSymbol%2C%26%29-class-method">#with_locale</a></code> should be used instead of <code><a href="I18n.html#activate%28locale%3AString%7CSymbol%29%3AString-class-method">#activate</a></code>
 for cases where it is important to ensure that the previous active locale is restored.</p>
-
 <p>An <code><a href="I18n/Errors/InvalidLocale.html">I18n::Errors::InvalidLocale</a></code> exception will be raised by this method if the passed locale is not available in
 the main catalog of translations (ie. if no translations were defined for the considered locale).</p>
         </div>
@@ -769,13 +756,12 @@ the main catalog of translations (ie. if no translations were defined for the co
         
         def self.<strong>available_locales</strong> : Array(String)
 
-        <a class="method-permalink" href="#available_locales:Array(String)-class-method">#</a>
+        <a class="method-permalink" href="#available_locales%3AArray%28String%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns the available locales.</p>
-
 <p>If no translations have been loaded yet, an array with the default locale in it will be returned.</p>
         </div>
       
@@ -790,13 +776,12 @@ the main catalog of translations (ie. if no translations were defined for the co
         
         def self.<strong>config</strong> : <a href="I18n/Config.html">Config</a>
 
-        <a class="method-permalink" href="#config:Config-class-method">#</a>
+        <a class="method-permalink" href="#config%3AConfig-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns the main configuration object.</p>
-
 <p>This methods return the main <code><a href="I18n/Config.html">I18n::Config</a></code> object used by the <code><a href="I18n.html">I18n</a></code> module to persist configuration options.</p>
         </div>
       
@@ -811,15 +796,14 @@ the main catalog of translations (ie. if no translations were defined for the co
         
         def self.<strong>config=</strong>(config : <a href="I18n/Config.html">Config</a>) : <a href="I18n/Config.html">Config</a>
 
-        <a class="method-permalink" href="#config=(config:Config):Config-class-method">#</a>
+        <a class="method-permalink" href="#config%3D%28config%3AConfig%29%3AConfig-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Allows to replace the main configuration object.</p>
-
 <p>This method will replace the main configuration object used by the <code><a href="I18n.html">I18n</a></code> module but will not change the main
-catalog of translation. Calling <code><a href="I18n.html#init:Nil-class-method">#init</a></code> once the new <code><a href="I18n/Config.html">I18n::Config</a></code> object has been assigned might be necessary in
+catalog of translation. Calling <code><a href="I18n.html#init%3ANil-class-method">#init</a></code> once the new <code><a href="I18n/Config.html">I18n::Config</a></code> object has been assigned might be necessary in
 order to ensure that the main catalog of translations used by the <code><a href="I18n.html">I18n</a></code> module is reinitialized.</p>
         </div>
       
@@ -834,17 +818,16 @@ order to ensure that the main catalog of translations used by the <code><a href=
         
         def self.<strong>init</strong> : Nil
 
-        <a class="method-permalink" href="#init:Nil-class-method">#</a>
+        <a class="method-permalink" href="#init%3ANil-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Initializes the <code><a href="I18n.html">I18n</a></code> module.</p>
-
 <p>Calling this method at application startup is necessary in order to ensure that the configuration options that were
-set through the use of the <code><a href="I18n/Config.html">I18n::Config</a></code> object (returned by the <code><a href="I18n.html#config:Config-class-method">#config</a></code> method) are read in order to initialize
+set through the use of the <code><a href="I18n/Config.html">I18n::Config</a></code> object (returned by the <code><a href="I18n.html#config%3AConfig-class-method">#config</a></code> method) are read in order to initialize
 the main catalog of translations. Calling this will ensure that the translations files that were defined using
-<code><a href="I18n/Config.html#loaders:Array(I18n::Loader::Base)-instance-method">I18n::Config#loaders</a></code> are read and processed in order to allow further translations lookups.</p>
+<code><a href="I18n/Config.html#loaders%3AArray%28I18n%3A%3ALoader%3A%3ABase%29-instance-method">I18n::Config#loaders</a></code> are read and processed in order to allow further translations lookups.</p>
         </div>
       
       <br/>
@@ -858,12 +841,12 @@ the main catalog of translations. Calling this will ensure that the translations
         
         def self.<strong>l</strong>(object : Number, format : String | Symbol = <span class="n">:default</span>) : String
 
-        <a class="method-permalink" href="#l(object:Number,format:String%7CSymbol=:default):String-class-method">#</a>
+        <a class="method-permalink" href="#l%28object%3ANumber%2Cformat%3AString%7CSymbol%3D%3Adefault%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Alias for <code><a href="I18n.html#localize(object:Number,format:String%7CSymbol=:default):String-class-method">#localize</a></code>.</p>
+          <p>Alias for <code><a href="I18n.html#localize%28object%3ANumber%2Cformat%3AString%7CSymbol%3D%3Adefault%29%3AString-class-method">#localize</a></code>.</p>
         </div>
       
       <br/>
@@ -877,12 +860,12 @@ the main catalog of translations. Calling this will ensure that the translations
         
         def self.<strong>l</strong>(object : Time | Tuple(Int32, Int32, Int32), format : String | Symbol = <span class="n">:default</span>, **kwargs) : String
 
-        <a class="method-permalink" href="#l(object:Time%7CTuple(Int32,Int32,Int32),format:String%7CSymbol=:default,**kwargs):String-class-method">#</a>
+        <a class="method-permalink" href="#l%28object%3ATime%7CTuple%28Int32%2CInt32%2CInt32%29%2Cformat%3AString%7CSymbol%3D%3Adefault%2C%2A%2Akwargs%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Alias for <code><a href="I18n.html#localize(object:Number,format:String%7CSymbol=:default):String-class-method">#localize</a></code>.</p>
+          <p>Alias for <code><a href="I18n.html#localize%28object%3ANumber%2Cformat%3AString%7CSymbol%3D%3Adefault%29%3AString-class-method">#localize</a></code>.</p>
         </div>
       
       <br/>
@@ -896,13 +879,12 @@ the main catalog of translations. Calling this will ensure that the translations
         
         def self.<strong>locale</strong> : String
 
-        <a class="method-permalink" href="#locale:String-class-method">#</a>
+        <a class="method-permalink" href="#locale%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Returns the currently active locale.</p>
-
 <p>The returned value will default to the default locale unless another locale is explicitly activated.</p>
         </div>
       
@@ -917,12 +899,12 @@ the main catalog of translations. Calling this will ensure that the translations
         
         def self.<strong>locale=</strong>(locale : String | Symbol) : String
 
-        <a class="method-permalink" href="#locale=(locale:String%7CSymbol):String-class-method">#</a>
+        <a class="method-permalink" href="#locale%3D%28locale%3AString%7CSymbol%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Alias for <code><a href="I18n.html#activate(locale:String%7CSymbol):String-class-method">#activate</a></code>.</p>
+          <p>Alias for <code><a href="I18n.html#activate%28locale%3AString%7CSymbol%29%3AString-class-method">#activate</a></code>.</p>
         </div>
       
       <br/>
@@ -936,16 +918,14 @@ the main catalog of translations. Calling this will ensure that the translations
         
         def self.<strong>localize</strong>(object : Number, format : String | Symbol = <span class="n">:default</span>) : String
 
-        <a class="method-permalink" href="#localize(object:Number,format:String%7CSymbol=:default):String-class-method">#</a>
+        <a class="method-permalink" href="#localize%28object%3ANumber%2Cformat%3AString%7CSymbol%3D%3Adefault%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Localizes a number.</p>
-
 <p>This method allows to localize a <code>Number</code> object (such as an integer or a float). By default, the <code>:default</code> format
 is used, but custom formats can be used as well:</p>
-
 <pre><code class="language-crystal"><span class="t">I18n</span>.localize(<span class="n">123_456.789</span>)          <span class="c"># =&gt; 123,456.789</span>
 <span class="t">I18n</span>.localize(<span class="n">123_456.789</span>, <span class="n">:custom</span>) <span class="c"># =&gt; 123,456.79</span></code></pre>
         </div>
@@ -961,17 +941,15 @@ is used, but custom formats can be used as well:</p>
         
         def self.<strong>localize</strong>(object : Time | Tuple(Int32, Int32, Int32), format : String | Symbol = <span class="n">:default</span>, **kwargs) : String
 
-        <a class="method-permalink" href="#localize(object:Time%7CTuple(Int32,Int32,Int32),format:String%7CSymbol=:default,**kwargs):String-class-method">#</a>
+        <a class="method-permalink" href="#localize%28object%3ATime%7CTuple%28Int32%2CInt32%2CInt32%29%2Cformat%3AString%7CSymbol%3D%3Adefault%2C%2A%2Akwargs%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Localizes a datetime or a date.</p>
-
 <p>This method allows to localize a <code>Time</code> object or a <code>Tuple(Int32, Int32, Int32)</code> object (which correspond to a date
-obtained through the use of <code>Time#date</code>). Both time or "date" objects can be localized using a predefined format
+obtained through the use of <code>Time#date</code>). Both time or &quot;date&quot; objects can be localized using a predefined format
 such as <code>:default</code>, <code>:short</code> or <code>:long</code>, but custom formats can be used as well:</p>
-
 <pre><code class="language-crystal"><span class="t">I18n</span>.localize(<span class="t">Time</span>.local)                 <span class="c"># =&gt; Sun, 13 Dec 2020 21:11:08 -0500</span>
 <span class="t">I18n</span>.localize(<span class="t">Time</span>.local, <span class="n">:short</span>)         <span class="c"># =&gt; 13 Dec 21:11</span>
 <span class="t">I18n</span>.localize(<span class="t">Time</span>.local.date)            <span class="c"># =&gt; 2020-12-13</span>
@@ -990,12 +968,12 @@ such as <code>:default</code>, <code>:short</code> or <code>:long</code>, but cu
         
         def self.<strong>t</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String
 
-        <a class="method-permalink" href="#t(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#</a>
+        <a class="method-permalink" href="#t%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Alias for <code><a href="I18n.html#translate(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#translate</a></code>.</p>
+          <p>Alias for <code><a href="I18n.html#translate%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#translate</a></code>.</p>
         </div>
       
       <br/>
@@ -1009,12 +987,12 @@ such as <code>:default</code>, <code>:short</code> or <code>:long</code>, but cu
         
         def self.<strong>t!</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String
 
-        <a class="method-permalink" href="#t!(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#</a>
+        <a class="method-permalink" href="#t%21%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Alias for <code><a href="I18n.html#translate!(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#translate!</a></code>.</p>
+          <p>Alias for <code><a href="I18n.html#translate%21%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#translate!</a></code>.</p>
         </div>
       
       <br/>
@@ -1028,16 +1006,14 @@ such as <code>:default</code>, <code>:short</code> or <code>:long</code>, but cu
         
         def self.<strong>translate</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String
 
-        <a class="method-permalink" href="#translate(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#</a>
+        <a class="method-permalink" href="#translate%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Performs a translation lookup.</p>
-
 <p>This method performs a translation lookup for a given <code>key</code>. If no translation can be found for the given <code>key</code>, a
 default string stating that the translation is missing will be returned.</p>
-
 <pre><code class="language-crystal"><span class="t">I18n</span>.translate(<span class="s">&quot;simple.translation&quot;</span>)               <span class="c"># =&gt; &quot;Simple translation&quot;</span>
 <span class="t">I18n</span>.translate(<span class="s">&quot;hello.user&quot;</span>, name: <span class="s">&quot;John&quot;</span>)         <span class="c"># =&gt; &quot;Hello John!&quot;</span>
 <span class="t">I18n</span>.translate(<span class="n">:blank</span>, scope: <span class="s">&quot;error.username&quot;</span>)    <span class="c"># =&gt; &quot;Username cannot be blank&quot;</span>
@@ -1055,16 +1031,14 @@ default string stating that the translation is missing will be returned.</p>
         
         def self.<strong>translate!</strong>(key : String | Symbol, params : Hash | NamedTuple | Nil = <span class="n">nil</span>, count : Float | Int | Nil = <span class="n">nil</span>, scope : Array(String | Symbol) | String | Symbol | Nil = <span class="n">nil</span>, default = <span class="n">nil</span>, **kwargs) : String
 
-        <a class="method-permalink" href="#translate!(key:String%7CSymbol,params:Hash%7CNamedTuple%7CNil=nil,count:Float%7CInt%7CNil=nil,scope:Array(String%7CSymbol)%7CString%7CSymbol%7CNil=nil,default=nil,**kwargs):String-class-method">#</a>
+        <a class="method-permalink" href="#translate%21%28key%3AString%7CSymbol%2Cparams%3AHash%7CNamedTuple%7CNil%3Dnil%2Ccount%3AFloat%7CInt%7CNil%3Dnil%2Cscope%3AArray%28String%7CSymbol%29%7CString%7CSymbol%7CNil%3Dnil%2Cdefault%3Dnil%2C%2A%2Akwargs%29%3AString-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Performs a translation lookup.</p>
-
 <p>This method performs a translation lookup for a given <code>key</code>. If no translation can be found for the given <code>key</code>,
 an <code><a href="I18n/Errors/MissingTranslation.html">I18n::Errors::MissingTranslation</a></code> exception will be raised.</p>
-
 <pre><code class="language-crystal"><span class="t">I18n</span>.translate!(<span class="s">&quot;simple.translation&quot;</span>)               <span class="c"># =&gt; &quot;Simple translation&quot;</span>
 <span class="t">I18n</span>.translate!(<span class="s">&quot;hello.user&quot;</span>, name: <span class="s">&quot;John&quot;</span>)         <span class="c"># =&gt; &quot;Hello John!&quot;</span>
 <span class="t">I18n</span>.translate!(<span class="n">:blank</span>, scope: <span class="s">&quot;error.username&quot;</span>)    <span class="c"># =&gt; &quot;Username cannot be blank&quot;</span>
@@ -1077,28 +1051,25 @@ an <code><a href="I18n/Errors/MissingTranslation.html">I18n::Errors::MissingTran
       </div>
     </div>
   
-    <div class="entry-detail" id="with_locale(locale:String|Symbol,&)-class-method">
+    <div class="entry-detail" id="with_locale(locale:String|Symbol,&amp;)-class-method">
       <div class="signature">
         
         def self.<strong>with_locale</strong>(locale : String | Symbol, &)
 
-        <a class="method-permalink" href="#with_locale(locale:String%7CSymbol,&)-class-method">#</a>
+        <a class="method-permalink" href="#with_locale%28locale%3AString%7CSymbol%2C%26%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Allows to activate a specific locale for a specific block.</p>
-
 <p>This method allows to activate a specific locale for a specific block, ensuring that the change of locale does not
 leak outside of the block. When the block execution completes, the locale that was previously activated prior to the
 block execution will be automatically activated again:</p>
-
 <pre><code class="language-crystal"><span class="t">I18n</span>.config.default_locale <span class="c"># outputs &quot;en&quot;</span>
 <span class="t">I18n</span>.with_locale(<span class="n">:es</span>) <span class="k">do</span>
   <span class="t">I18n</span>.translate!(<span class="s">&quot;test.translation&quot;</span>) <span class="c"># outputs a spanish translation</span>
 <span class="k">end</span>
 <span class="t">I18n</span>.translate!(<span class="s">&quot;test.translation&quot;</span>) <span class="c"># outputs an english translation</span></code></pre>
-
 <p>An <code><a href="I18n/Errors/InvalidLocale.html">I18n::Errors::InvalidLocale</a></code> exception will be raised by this method if the passed locale is not available in
 (ie. if no translations were defined for this locale).</p>
         </div>

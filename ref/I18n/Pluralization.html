@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="0.2.0">
+<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="crystal_docs.project_version" content="main-dev">
 <meta name="crystal_docs.project_name" content="i18n">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="i18n">
-  <title>I18n::Pluralization - i18n 0.2.0</title>
+  <title>I18n::Pluralization - i18n main-dev</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        0.2.0
+        main-dev
       </span>
     </div>
   </div>
@@ -313,11 +313,9 @@
   </h2>
 
   <p>Contains utilities allowing to pluralize translated strings.</p>
-
 <p>Custom pluralization rules can be implemented by subclassing the <code><a href="../I18n/Pluralization/Rule.html">I18n::Pluralization::Rule</a></code> abstract class and by
 implementing a <code>#rule</code> method. Custom pluralization rules can then be registered for specific locale through the use
-of the <code><a href="../I18n/Pluralization.html#register_rule(locale:String%7CSymbol,rule_klass:Rule.class)-class-method">#register_rule</a></code> method.</p>
-
+of the <code><a href="../I18n/Pluralization.html#register_rule%28locale%3AString%7CSymbol%2Crule_klass%3ARule.class%29-class-method">#register_rule</a></code> method.</p>
 <pre><code class="language-crystal"><span class="k">class</span> <span class="t">CustomRule</span> <span class="o">&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Pluralization</span><span class="t">::</span><span class="t">Rule</span>
   <span class="k">def</span> <span class="m">rule</span>(count : <span class="t">Int</span>) : <span class="t">Symbol</span>
     count <span class="o">==</span> <span class="n">1</span> ? <span class="n">:one</span> : <span class="n">:other</span>
@@ -496,14 +494,14 @@ of the <code><a href="../I18n/Pluralization.html#register_rule(locale:String%7CS
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#register_rule(locale:String%7CSymbol,rule_klass:Rule.class)-class-method" class="signature"><strong>.register_rule</strong>(locale : String | Symbol, rule_klass : <span class="t">Rule</span>.<span class="k">class</span>)</a>
+        <a href="#register_rule%28locale%3AString%7CSymbol%2Crule_klass%3ARule.class%29-class-method" class="signature"><strong>.register_rule</strong>(locale : String | Symbol, rule_klass : <span class="t">Rule</span>.<span class="k">class</span>)</a>
         
           <div class="summary"><p>Allows to register a pluralization rule for a specific locale.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#rule_for(locale:String%7CSymbol)-class-method" class="signature"><strong>.rule_for</strong>(locale : String | Symbol)</a>
+        <a href="#rule_for%28locale%3AString%7CSymbol%29-class-method" class="signature"><strong>.rule_for</strong>(locale : String | Symbol)</a>
         
           <div class="summary"><p>Returns the rule registered for a specific locale, or <code>nil</code> if none is registered.</p></div>
         
@@ -538,13 +536,12 @@ of the <code><a href="../I18n/Pluralization.html#register_rule(locale:String%7CS
         
         def self.<strong>register_rule</strong>(locale : String | Symbol, rule_klass : <span class="t">Rule</span>.<span class="k">class</span>)
 
-        <a class="method-permalink" href="#register_rule(locale:String%7CSymbol,rule_klass:Rule.class)-class-method">#</a>
+        <a class="method-permalink" href="#register_rule%28locale%3AString%7CSymbol%2Crule_klass%3ARule.class%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Allows to register a pluralization rule for a specific locale.</p>
-
 <p>This method will associate a specific locale to the passed <code>rule_klass</code> (subclass of <code><a href="../I18n/Pluralization/Rule.html">I18n::Pluralization::Rule</a></code>)
 and ensure that every pluralization performed for this locale are done using this rule.</p>
         </div>
@@ -560,7 +557,7 @@ and ensure that every pluralization performed for this locale are done using thi
         
         def self.<strong>rule_for</strong>(locale : String | Symbol)
 
-        <a class="method-permalink" href="#rule_for(locale:String%7CSymbol)-class-method">#</a>
+        <a class="method-permalink" href="#rule_for%28locale%3AString%7CSymbol%29-class-method">#</a>
       </div>
       
         <div class="doc">
