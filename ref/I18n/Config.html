@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.1.1">
+<meta name="generator" content="Crystal Docs 1.2.2">
 <meta name="crystal_docs.project_version" content="main-dev">
 <meta name="crystal_docs.project_name" content="i18n">
 
@@ -623,7 +623,7 @@ be applied to the associated catalog of translations.</p>
 locales if the current locale the translation is requested into is missing.</p>
 <p>The passed <code>fallback</code> can be a hash or a named tuple that defines the chains of fallbacks to use for specific
 locales. For example:</p>
-<pre><code class="language-crystal"><span class="t">I18n</span>.config.fallbacks <span class="o">=</span> {<span class="s">&quot;en-CA&quot;</span> => [<span class="s">&quot;en-US&quot;</span>, <span class="s">&quot;en&quot;</span>], <span class="s">&quot;fr-CA&quot;</span> => <span class="s">&quot;fr&quot;</span>}</code></pre>
+<pre><code class="language-crystal"><span class="t">I18n</span>.config.fallbacks <span class="o">=</span> {<span class="s">&quot;en-CA&quot;</span> =&gt; [<span class="s">&quot;en-US&quot;</span>, <span class="s">&quot;en&quot;</span>], <span class="s">&quot;fr-CA&quot;</span> =&gt; <span class="s">&quot;fr&quot;</span>}</code></pre>
 <p>It can also be a simple array of fallbacks. In that case, this chain of fallbacked locales will be used as a
 default for all the available locales when translations are missing:</p>
 <pre><code class="language-crystal"><span class="t">I18n</span>.config.fallbacks <span class="o">=</span> [<span class="s">&quot;en-US&quot;</span>, <span class="s">&quot;en&quot;</span>]</code></pre>
