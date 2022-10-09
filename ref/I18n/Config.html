@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.4.1">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="main-dev">
 <meta name="crystal_docs.project_name" content="i18n">
 
@@ -623,13 +623,13 @@ be applied to the associated catalog of translations.</p>
 locales if the current locale the translation is requested into is missing.</p>
 <p>The passed <code>fallback</code> can be a hash or a named tuple that defines the chains of fallbacks to use for specific
 locales. For example:</p>
-<pre><code class="language-crystal"><span class="t">I18n</span>.config.fallbacks <span class="o">=</span> {<span class="s">&quot;en-CA&quot;</span> =&gt; [<span class="s">&quot;en-US&quot;</span>, <span class="s">&quot;en&quot;</span>], <span class="s">&quot;fr-CA&quot;</span> =&gt; <span class="s">&quot;fr&quot;</span>}</code></pre>
+<pre><code class="language-crystal"><span class="t">I18n</span>.config.fallbacks <span class="o">=</span> {<span class="s">&quot;en-CA&quot;</span> <span class="o">=&gt;</span> [<span class="s">&quot;en-US&quot;</span>, <span class="s">&quot;en&quot;</span>], <span class="s">&quot;fr-CA&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;fr&quot;</span>}</code></pre>
 <p>It can also be a simple array of fallbacks. In that case, this chain of fallbacked locales will be used as a
 default for all the available locales when translations are missing:</p>
 <pre><code class="language-crystal"><span class="t">I18n</span>.config.fallbacks <span class="o">=</span> [<span class="s">&quot;en-US&quot;</span>, <span class="s">&quot;en&quot;</span>]</code></pre>
 <p>It's also possible to specficy both default fallbacks and a mapping of fallbacks by initializing an
 <code><a href="../I18n/Locale/Fallbacks.html">I18n::Locale::Fallbacks</a></code> object as follows:</p>
-<pre><code class="language-crystal"><span class="t">I18n</span>.config.fallbacks <span class="o">=</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Locale</span><span class="t">::</span><span class="t">Fallbacks</span>.<span class="k">new</span>(
+<pre><code class="language-crystal"><span class="t">I18n</span>.config.fallbacks <span class="o">=</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Locale</span><span class="t">::</span><span class="t">Fallbacks</span>.new(
   {<span class="s">&quot;fr-CA-special&quot;</span>: [<span class="s">&quot;fr-CA&quot;</span>, <span class="s">&quot;fr&quot;</span>, <span class="s">&quot;en&quot;</span>]},
   default: [<span class="s">&quot;en&quot;</span>]
 )</code></pre>
@@ -661,7 +661,7 @@ initialized from this configuration object. Translations loaders are subclasses 
 used to extract raw translations from files (eg. yaml or json) or other sources.</p>
 <p>By default, an empty array will be returned by this method. Loaders have to be explicitly appended to this array
 in order to be used to initialize associated catalog of translations. For example:</p>
-<pre><code class="language-crystal"><span class="t">I18n</span>.config.loaders <span class="o">&lt;&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>(<span class="s">&quot;config/locales&quot;</span>)</code></pre>
+<pre><code class="language-crystal"><span class="t">I18n</span>.config.loaders <span class="o">&lt;&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">YAML</span>.new(<span class="s">&quot;config/locales&quot;</span>)</code></pre>
         </div>
       
       <br/>
@@ -685,7 +685,7 @@ in order to be used to initialize associated catalog of translations. For exampl
 initialized from this configuration object. Translations loaders are subclasses of <code><a href="../I18n/Loader/Base.html">I18n::Loader::Base</a></code> and are
 used to extract raw translations from files (eg. yaml or json) or other sources.</p>
 <pre><code class="language-crystal"><span class="t">I18n</span>.config.loaders <span class="o">=</span> [
-  <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>(<span class="s">&quot;config/locales&quot;</span>),
+  <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">YAML</span>.new(<span class="s">&quot;config/locales&quot;</span>),
 ] <span class="k">of</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">Base</span></code></pre>
         </div>
       

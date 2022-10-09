@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.4.1">
+<meta name="generator" content="Crystal Docs 1.5.0">
 <meta name="crystal_docs.project_version" content="main-dev">
 <meta name="crystal_docs.project_name" content="i18n">
 
@@ -318,7 +318,7 @@
 <p>This loader implementation allows to load translations from YAML files (<code>.yaml</code> or <code>.yml</code> files). It must be
 initialized from a given path and it will recursively try to load all the YAML files that are available under the
 targetted directory:</p>
-<pre><code class="language-crystal"><span class="t">I18n</span>.config.loaders <span class="o">&lt;&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">YAML</span>.<span class="k">new</span>(<span class="s">&quot;config/locales&quot;</span>)</code></pre>
+<pre><code class="language-crystal"><span class="t">I18n</span>.config.loaders <span class="o">&lt;&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">YAML</span>.new(<span class="s">&quot;config/locales&quot;</span>)</code></pre>
 <p>This loader also allows to embed the raw translations that are available under the targetted directory inside the
 compiled binary through the use of the <code><a href="../../I18n/Loader/YAML.html#embed%28path%29-macro">#embed</a></code> macro:</p>
 <pre><code class="language-crystal"><span class="t">I18n</span>.config.loaders <span class="o">&lt;&lt;</span> <span class="t">I18n</span><span class="t">::</span><span class="t">Loader</span><span class="t">::</span><span class="t">YAML</span>.embed(<span class="s">&quot;config/locales&quot;</span>)</code></pre>
