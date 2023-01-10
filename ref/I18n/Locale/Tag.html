@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.5.0">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main-dev">
 <meta name="crystal_docs.project_name" content="i18n">
 
@@ -388,7 +388,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#parent%3Aself%3F-instance-method" class="signature"><strong>#parent</strong> : <span class="k">self</span>?</a>
+        <a href="#parent%3Aself%7CNil-instance-method" class="signature"><strong>#parent</strong> : <span class="k">self</span> | Nil</a>
         
           <div class="summary"><p>Returns the direct parent tag or <code>nil</code> if none is available.</p></div>
         
@@ -404,7 +404,7 @@
       <li class="entry-summary">
         <a href="#to_s%3AString-instance-method" class="signature"><strong>#to_s</strong> : String</a>
         
-          <div class="summary"><p>Returns a string representation of this object.</p></div>
+          <div class="summary"><p>Returns a nicely readable and concise string representation of this object, typically intended for users.</p></div>
         
       </li>
     
@@ -499,12 +499,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="parent:self?-instance-method">
+    <div class="entry-detail" id="parent:self|Nil-instance-method">
       <div class="signature">
         
-        def <strong>parent</strong> : <span class="k">self</span>?
+        def <strong>parent</strong> : <span class="k">self</span> | Nil
 
-        <a class="method-permalink" href="#parent%3Aself%3F-instance-method">#</a>
+        <a class="method-permalink" href="#parent%3Aself%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -552,10 +552,11 @@
               Description copied from class Object
             </div>
           
-          <p>Returns a string representation of this object.</p>
-<p>Descendants must usually <strong>not</strong> override this method. Instead,
-they must override <code>to_s(io)</code>, which must append to the given
-IO object.</p>
+          <p>Returns a nicely readable and concise string representation of this object,
+typically intended for users.</p>
+<p>This method should usually <strong>not</strong> be overridden. It delegates to
+<code>#to_s(IO)</code> which can be overridden for custom implementations.</p>
+<p>Also see <code>#inspect</code>.</p>
         </div>
       
       <br/>
