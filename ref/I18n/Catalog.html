@@ -592,7 +592,7 @@ locales in order to define in which locales the translated strings should be ret
           
           <p>Initializes a new catalog from a specific configuration object.</p>
 <p>This class methods provides the ability to initialize a new catalog of translation from an existing <code><a href="../I18n/Config.html">I18n::Config</a></code>
-object: all the configuration options set on this object will be used to intialize the new catalog of
+object: all the configuration options set on this object will be used to initialize the new catalog of
 translations.</p>
         </div>
       
@@ -644,8 +644,8 @@ translations.</p>
           
           <p>Activates a locale for translations.</p>
 <p>This method allows to set the locale used to produce translated contents. Note that once activated, the current
-locale will remain active until it's explicly changed again. <code><a href="../I18n/Catalog.html#with_locale%28locale%3AString%7CSymbol%2C%26%29-instance-method">#with_locale</a></code> should be used instead of <code><a href="../I18n/Catalog.html#activate%28locale%3AString%7CSymbol%29%3AString-instance-method">#activate</a></code>
-for cases where it is important to ensure that the previous active locale is restored.</p>
+locale will remain active until it's explicitly changed again. <code><a href="../I18n/Catalog.html#with_locale%28locale%3AString%7CSymbol%2C%26%29-instance-method">#with_locale</a></code> should be used instead of
+<code><a href="../I18n/Catalog.html#activate%28locale%3AString%7CSymbol%29%3AString-instance-method">#activate</a></code> for cases where it is important to ensure that the previous active locale is restored.</p>
 <p>An <code><a href="../I18n/Errors/InvalidLocale.html">I18n::Errors::InvalidLocale</a></code> exception will be raised by this method if the passed locale is not available in
 the catalog (ie. if no translations was injected into this catalog for the considered locale).</p>
         </div>
